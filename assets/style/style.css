@@ -11,6 +11,31 @@
 * {
   box-sizing: border-box;
 }
+
+.sadMode {
+  --primary: #fff;
+  --secondary: #000107;
+  --highlight-primary: #cae4dd;
+  --highlight-secondary: #c8c3d4;
+  --radius: 50%;
+  --pill: 20rem;
+  --line: 0rem;
+  display: initial;
+  
+  background-color: var(--secondary);
+  & a{
+    display: unset;
+    position: absolute;
+    rotate: 180deg;
+    &:nth-of-type(5){
+      background-color: red;
+      z-index: 1000;
+    }
+  }
+
+  ;
+}
+
 body {
   margin: 2rem;
   padding: 0;
@@ -50,7 +75,7 @@ a:nth-of-type(12) {
 .jump {
   animation-name: jump;
   animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
-  animation-duration: 1.2s;
+  animation-duration: 5.2s;
   animation-iteration-count: 1;
 }
 
@@ -79,3 +104,213 @@ a:nth-of-type(12) {
 }
 
 /* Jouw animaties */
+
+a:nth-of-type(1) {
+position: relative;
+background:blue;
+}
+
+.shake{
+  animation-name: shake;
+  animation-timing-function: ease;
+  animation-duration: .1s;
+  animation-iteration-count: 10;
+  transition: 1s;
+  perspective: 15em;
+}
+
+@keyframes shake {
+  0%{
+    transform: translate(0, 0) rotateZ(0) rotateY(0);
+  }
+  8%{
+    transform: translate(-50, 1px) rotateZ(5deg) rotateY(10deg);
+  }
+  20%{
+    transform: translate(-110px, 5px) rotateZ(10deg) rotateY(40deg);
+  }
+  50%{
+    transform: translate(0px, 0px) rotateZ(0deg) rotateY(0deg);
+  }
+  90%{
+    transform: translate(90px, -4px) rotateZ(-10deg) rotateY(-40deg);
+  }
+  95%{
+    transform: translate(40px, 0px) rotateZ(-5deg) rotateY(-10deg);
+  }
+  100%{
+    transform: translate(0, 0) rotateZ(0) rotateY(0);
+  }
+  
+}
+
+a:nth-of-type(2) {
+  position: relative;
+  background:yellow;
+  color: invert;
+  }
+
+.expandMore{
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  animation-name: expand;
+  animation-timing-function: ease;
+  animation-duration: .1s;
+  animation-iteration-count: 10;
+  perspective: 10em;
+  rotate: x 30deg;
+  translate: y -100px;
+  scale: 4;
+  transition: .5s;
+}
+
+.expand{
+  
+  transition: .5s;
+  scale: 2;
+}
+
+a:nth-of-type(3){
+  background: white;
+
+
+}
+
+.rainbow{
+
+  &#red{
+    background: red;
+  }
+  &#green{
+    background: green;
+  }
+  &#blue{
+    background: blue;
+  }
+  &#yellow{
+    background: yellow;
+  }
+  &#orange{
+    background: orange;
+  }
+  &#purple{
+    background: purple;
+  }
+  &#pink{
+    background: pink;
+  }
+  &#grey{
+    background: rgb(0,0,0);
+background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(136,165,176,1) 48%, rgba(104,132,146,1) 74%);
+  }
+  &#linear-g{
+    background: rgb(131,58,180);
+    background: linear-gradient(112deg, rgba(131,58,180,1) 0%, rgba(170,49,132,1) 24%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+  }
+
+  &#pattern-one{
+    
+      --s: 150px; /* control the size */
+      --c1: #f7d2a1;
+      --c2: #05057e;
+    
+      --_g: 
+         var(--c1) 0%  5% ,var(--c2) 6%  15%,var(--c1) 16% 25%,var(--c2) 26% 35%,var(--c1) 36% 45%,
+         var(--c2) 46% 55%,var(--c1) 56% 65%,var(--c2) 66% 75%,var(--c1) 76% 85%,var(--c2) 86% 95%,
+         #0000 96%;
+      background:
+        radial-gradient(50% 50% at 100% 0,var(--_g)),
+        radial-gradient(50% 50% at 0 100%,var(--_g)),
+        radial-gradient(50% 50%,var(--_g)),
+        radial-gradient(50% 50%,var(--_g)) calc(var(--s)/2) calc(var(--s)/2)
+        var(--c1);
+      background-size: var(--s) var(--s);
+   
+
+  }
+  &#pattern-two{
+    
+      --s: 100px; /* control the size */
+    
+      --_g: #00A0B0 /* first color */ 0 25%,#0000 0 50%;
+      background:
+       repeating-conic-gradient(at 33% 33%,var(--_g)),
+       repeating-conic-gradient(at 66% 66%,var(--_g)),
+       #EB6841;  /* second color */ 
+      background-size: var(--s) var(--s); 
+    
+    
+  }
+  &#pattern-three{
+  
+      --s: 76px; /* control the size */
+      --c1: #F6D86B;
+      --c2: #F10C49;
+      
+      background:
+        conic-gradient(
+          var(--c2)   63.43deg ,var(--c1) 0 116.36deg,
+          var(--c2) 0 180deg   ,var(--c1) 0 243.43deg,
+          var(--c2) 0 296.15deg,var(--c1) 0);
+      background-size: calc(2*var(--s)) var(--s);
+    
+  }
+}
+
+a:nth-of-type(5){
+  background: #73f10c5a;
+  color: #050840;
+}
+a:nth-of-type(6){
+  background: #F10C49;
+}
+.wide:focus{
+ 
+  
+  background-color: burlywood;
+  animation-name: grow;
+  animation-timing-function: cubic-bezier(0.28, 0.84, 0.42, 1);
+  animation-duration: 7s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  transition: all 1s;
+  background-origin: center;
+  transform-origin: center;
+}
+@keyframes grow {
+  0%{
+    width: 10dvw;
+  }
+  50%{
+    width: 50dvw;
+    height: 6dvh;
+  }
+
+  70%{
+    height:50dvh ;
+  }
+
+  80%{
+    height: 80dvh ;
+  }
+  100%{
+    width: 70dvw;
+    height: 100dvh;
+  }
+}
+
+.tall{
+  height: 70dvh;
+  transition: 6s linear;
+}
+
+a:nth-of-type(7){
+  position: absolute;
+  translate: -50% -50%;
+  
+}
+a:nth-of-type(8){
+  margin-left: 8rem;
+  
+}
