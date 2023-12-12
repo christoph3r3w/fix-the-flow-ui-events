@@ -7,12 +7,15 @@ interaction.addEventListener('animationend', jumpHandler)
 function jumpHandler() {
   interaction.classList.toggle('jump')
 }
+
+
 // first
 document
   .querySelector('a:nth-of-type(1)')
   .addEventListener('click', function(){
     this.classList.toggle('shake')
   });
+
 
 // second
 let secondItem = document.querySelector('a:nth-of-type(2)')
@@ -79,10 +82,11 @@ function oreintation(e){
 }
 async function  requestDeviceOreintation(){
   if(typeof DeviceOrientationEvent != 'undefined' && typeof DeviceOrientationEvent.requestPermission === 'funtion' ){
-
+    console.log(this)
   } else if('DeviceOrientationEvent' in window) {
     console.log('yes')
-    window.addEventListener('deviceoreintation', oreintation )
+    window.addEventListener('devicemotion', oreintation )
+
   } else {
     alert('not supported')
   }
@@ -119,19 +123,28 @@ sixthItem.addEventListener('click', function(){
 
 let seventhItem = document.querySelector('a:nth-of-type(7)');
 
-seventhItem.addEventListener('dblclick',()=>{
-  window.addEventListener('mousemove',(e)=>{
-    seventhItem.style.top = e.pageY + 'px';
-    seventhItem.style.left = e.pageX + 'px';
-  })
-});
 
-seventhItem.removeEventListener('click',()=>{
-  window.removeEventListener('mousemove',(e)=>{
-    seventhItem.style.top = e.pageY + 'px';
-    seventhItem.style.left = e.pageX + 'px';
-  })
-});
+seventhItem.addEventListener('dblclick',follow) 
+
+function follow(){
+  alert('yes')
+  window.addEventListener('mousemove',(e)=>{
+        seventhItem.style.top = e.pageY + 'px';
+        seventhItem.style.left = e.pageX + 'px';
+      })
+}
+  
+addEventListener('keypress', baiKas );
+
+
+
+//   = window.addEventListener('mousemove',(e)=>{
+//     seventhItem.style.top = e.pageY + 'px';
+//     seventhItem.style.left = e.pageX + 'px';
+//   })
+// ;
+
+
 
 //chatgpt 
 // const handleDoubleClick = () => {
