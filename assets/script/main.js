@@ -20,8 +20,8 @@ document
 // second
 let secondItem = document.querySelector('a:nth-of-type(2)')
 
-secondItem.addEventListener('click', function(){
-  console.log(this)
+secondItem.addEventListener('click', function(event){
+  console.log(event)
   secondItem.classList.toggle('expand')
 })
 
@@ -70,7 +70,7 @@ thrirdItem.addEventListener('keypress',function(e){
    else if (e.key == ']') {
     body.id = 'pattern-three'
   }else{
-    alert('goog')
+    body.classList.remove('rainbow')
   }
 });
 
@@ -104,7 +104,7 @@ fourthItem.addEventListener("",()=>{
 let fifthItem = document.querySelector('a:nth-of-type(5)');
 const sadMode = document.querySelector('sadMode');
 
-fifthItem.addEventListener('mouseover', function(){
+fifthItem.addEventListener('mouseenter', function(){
   body.classList.toggle('sadMode')
 } );
 
@@ -134,7 +134,7 @@ function follow(){
       })
 }
   
-addEventListener('keypress', baiKas );
+// addEventListener('keypress', baiKas );
 
 
 
@@ -160,3 +160,39 @@ addEventListener('keypress', baiKas );
 
 // seventhItem.removeEventListener('click', handleDoubleClick);
 // window.removeEventListener('mousemove', handleMouseMove);
+
+
+// eighth
+
+let sound = document.querySelector('a:nth-of-type(8) > audio');
+
+let eighthItem = document.querySelector('a:nth-of-type(8)');
+  function PlaySound() {
+   let audio = new Audio('assets/script/knocking2.mp3');
+   audio.play()
+    // alert('boo')
+  }
+eighthItem.addEventListener('click', PlaySound);
+
+// ninth
+
+let ninthItem = document.querySelector('a:nth-of-type(9)');
+var delay;
+
+ninthItem.addEventListener('mousedown', function(e) {
+ 
+  delay = setTimeout(function () {
+    body.classList.toggle('ego')
+  },1300)
+});
+
+ninthItem.addEventListener('mouseup', function (e) {
+  clearTimeout(delay);
+});
+ninthItem.addEventListener('mouseout', function (e) {
+  clearTimeout(delay);
+});
+
+
+
+// add a class that has scale that can grow. then let it transition during a longpress 

@@ -7,6 +7,7 @@
   --radius: 0.5rem;
   --pill: 2rem;
   --line: 0.1rem;
+  --scale : 1.1;
 }
 * {
   box-sizing: border-box;
@@ -20,13 +21,13 @@
   --radius: 50%;
   --pill: 20rem;
   --line: 0rem;
-  display: initial;
+  /* display: initial; */
   
-  background-color: var(--secondary);
+  /* background-color: var(--secondary); */
   & a{
-    /* display: unset; */
-    position: absolute;
-    rotate: 180deg;
+    display: unset;
+    /* position: absolute; */
+    /* rotate: 180deg; */
     &:nth-of-type(5){
       background-color: red;
       z-index: 1000;
@@ -70,6 +71,13 @@ a:nth-of-type(12) {
   background: var(--highlight-secondary);
   color: var(--secondary);
   border-color: var(--secondary);
+  &:hover,:focus{
+    scale: var(--scale);
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
 }
 
 .jump {
@@ -108,6 +116,14 @@ a:nth-of-type(12) {
 a:nth-of-type(1) {
 position: relative;
 background:blue;
+&:hover,:focus{
+  scale: var(--scale);
+  
+}
+
+&:active{
+  scale: calc(var(--scale) * .8);
+}
 }
 
 .shake{
@@ -148,6 +164,14 @@ a:nth-of-type(2) {
   position: relative;
   background:yellow;
   color: invert;
+  &:hover,:focus{
+   
+    color: #000107;
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
   }
 
 .expandMore{
@@ -173,7 +197,14 @@ a:nth-of-type(2) {
 
 a:nth-of-type(3){
   background: white;
+  &:hover,:focus{
+    scale: var(--scale);
+    color: #000107;
+  }
 
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
 
 }
 
@@ -261,9 +292,25 @@ background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(136,165,176,1) 48%, r
 a:nth-of-type(5){
   background: #73f10c5a;
   color: #050840;
+  &:hover,:focus{
+    scale: var(--scale);
+    
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
 }
 a:nth-of-type(6){
   background: #F10C49;
+  &:hover,:focus{
+    scale: var(--scale);
+    color: #000107;
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
 }
 .wide:focus{
  
@@ -311,8 +358,61 @@ a:nth-of-type(7){
   margin-top: 2.4rem;
   margin-left: 3.5rem;
   background: orange;
-  transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);}
+  transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  &:hover,:focus{
+    scale: var(--scale);
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+    cursor: none;
+  }
+}
+
 a:nth-of-type(8){
   margin-left: 8rem;
   background: cadetblue;
+  &:hover,:focus{
+    scale: var(--scale);
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
+}
+
+a:nth-of-type(9){
+  background: rgb(193, 116, 193);
+  --scale : 1.1;
+  &:hover,:focus{
+    scale: var(--scale);
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
+}
+.ego{
+  background-color:black ;
+
+& a:not(a:nth-of-type(9)){
+ filter: grayscale(10) blur(50px);
+ transition: 5s ease;
+ transition-property: filter;
+ cursor:none;
+
+}
+}
+
+a:nth-of-type(10){
+  background: rgb(174, 81, 41);
+  
+  &:hover,:focus{
+    scale: var(--scale);
+  }
+
+  &:active{
+    scale: calc(var(--scale) * .8);
+  }
 }
