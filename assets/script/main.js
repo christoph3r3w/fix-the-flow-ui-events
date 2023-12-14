@@ -113,10 +113,21 @@ fifthItem.addEventListener('mouseenter', function(){
 let sixthItem = document.querySelector('a:nth-of-type(6)');
 
 sixthItem.addEventListener('click', function(){
-  this.classList.toggle('wide')
+  var _this = this
+  _this.classList.toggle('wide')
+  // _this.style.position = absolute ;
+  _this.style.bottom = 0 + 'px' ;
   setTimeout(function(){
-    alert('thats enough slices')
-  },7000)
+    // alert('thats enough slices')
+    _this.classList.toggle('wide')
+    _this.classList.toggle('tall')
+    _this.innerHTML = 'fix'
+  },8000)
+  setTimeout(function(){
+    // alert('thats enough slices')
+    _this.classList.toggle('tall')
+    _this.innerHTML = 'Broken'
+  },2000)
 });
 
 //seventh
@@ -132,6 +143,13 @@ function follow(){
         seventhItem.style.top = e.pageY + 'px';
         seventhItem.style.left = e.pageX + 'px';
       })
+      setTimeout(function(){
+        // alert('thats enough slices')
+        window.removeEventListener('mousemove',(e))}
+      ,8000)
+  
+    
+
 }
   
 // addEventListener('keypress', baiKas );
@@ -180,9 +198,10 @@ let ninthItem = document.querySelector('a:nth-of-type(9)');
 var delay;
 
 ninthItem.addEventListener('mousedown', function(e) {
- 
+ var ami = this
   delay = setTimeout(function () {
     body.classList.toggle('ego')
+    ami.innerHTML = "blur";
   },1300)
 });
 
@@ -193,6 +212,23 @@ ninthItem.addEventListener('mouseout', function (e) {
   clearTimeout(delay);
 });
 
+var count = 0
+ const tenthItem = document.querySelector('a:nth-of-type(10)')
+ tenthItem.addEventListener('click',(e)=>{
+  count += 1;
+  tenthItem.innerHTML = ':' + count;
+  // console.log('yes')
+  // console.log(e)
 
+  if(count >= e.offsetY){
+    count = 0
+  }
+  else{
+    return(null)
+  }
+ });
 
-// add a class that has scale that can grow. then let it transition during a longpress 
+ let info = document.querySelector('info-text')
+
+ info.addEventListener('')
+ console.log(info)

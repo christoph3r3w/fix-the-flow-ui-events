@@ -325,6 +325,12 @@ a:nth-of-type(6){
   background-origin: center;
   transform-origin: center;
 }
+.tall{
+  height: 70dvh;
+  transition: 6s linear;
+  animation-name: grow;
+}
+
 @keyframes grow {
   0%{
     width: 10dvw;
@@ -340,17 +346,15 @@ a:nth-of-type(6){
 
   80%{
     height: 80dvh ;
+    width: 70dvw;
   }
   100%{
-    width: 70dvw;
-    height: 100dvh;
+    width: 110dvw;
+    height: 110dvh;
   }
 }
 
-.tall{
-  height: 70dvh;
-  transition: 6s linear;
-}
+
 
 a:nth-of-type(7){
   position: absolute;
@@ -414,5 +418,21 @@ a:nth-of-type(10){
 
   &:active{
     scale: calc(var(--scale) * .8);
+  }
+}
+
+.info-strip{
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  bottom: 50px;
+  color: white;
+  font-size: clamp(3rem , 10rem , 15dvw);
+
+  >p{
+    margin: 0;
+    padding: 0;
+    /* border-bottom: solid; */
+    text-transform: capitalize;
   }
 }
